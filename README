@@ -1,0 +1,23 @@
+SimpleVhost
+author meza <meza@meza.hu>
+
+
+Usage:
+sudo ./create.sh "www.site.com"
+
+OR:
+sudo ./create.sh
+
+
+What it does:
+It creates a config file in the defined apache site-available [/etc/apache2/sites-available] directory,
+symlinks it to the sites-enabled [/etc/apache2/sites-enabled]
+Creates a www.site.com directory in the apache log dir [/var/log/apache2], and touches error.log and access.log in it.
+
+It sets the servername to www.site.com, the document root to [/var/www/www.site.com] and the proper logfiles.
+
+WARNING:
+the /var/www/www.site.com is not handled yet properly. Check the script if you'd like to customize the location.
+
+INFO:
+All variables are changeable in the script. Feel free to customize
