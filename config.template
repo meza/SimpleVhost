@@ -1,0 +1,25 @@
+<VirtualHost *:80>
+	ServerName  _SITE_
+	ServerAdmin meza@meza.hu
+
+	DocumentRoot /var/www/_SITE_
+	<Directory />
+		Options FollowSymLinks
+		AllowOverride All
+	</Directory>
+	<Directory /var/www/_SITE_>
+		Options Indexes FollowSymLinks MultiViews
+		AllowOverride All
+		Order allow,deny
+		allow from all
+	</Directory>
+
+	ErrorLog /var/log/apache2/_SITE_/error.log
+
+	# Possible values include: debug, info, notice, warn, error, crit,
+	# alert, emerg.
+	LogLevel warn
+
+	CustomLog /var/log/apache2/_SITE_/access.log combined
+
+</VirtualHost>
